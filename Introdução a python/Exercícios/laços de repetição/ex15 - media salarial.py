@@ -16,6 +16,9 @@ while True:
 
     if codigo == 1:
         idade = int(input("Digite a sua idade: "))
+        maiorIdade = max(idade, maiorIdade)
+        menorIdade = min(idade, menorIdade)
+
         if idade > maiorIdade:
             maiorIdade = idade
         if idade < menorIdade:

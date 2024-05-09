@@ -11,14 +11,14 @@ quantidadeSalarios = 0
 mediaSalarios = 0
 
 while True:
-    print("Código \t Descrição")
+    print("- Código \t Descrição -")
     print("1 \t Adicionar pessoa")
     print("2 \t Exibir resultados e sair")
     opcao = int(input("Digite a opção desejada: "))
    
     match(opcao):
         case 1:
-            print("=== Solicitando dados ===")
+            print("- Solicitando dados -")
             idade = int(input("Digite a idade: "))
             sexo = input("Digite o sexo (M ou F): ")
             salario = float(input("Digite o salário: "))
@@ -37,7 +37,7 @@ while True:
                 mediaSalarios = somaSalarios / quantidadeSalarios
        
         case 2:
-            print("=== Mostrando resultados ===")
+            print("- Mostrando resultados -")
             print(f"Média de salários do grupo: {mediaSalarios}")
             print(f"Maior idade do grupo: {maiorIdade}")
             print(f"Menor idade do grupo: {menorIdade}")
