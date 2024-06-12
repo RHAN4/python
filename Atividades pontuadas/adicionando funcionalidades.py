@@ -54,12 +54,12 @@ while True:
     alturas.append(altura)
     pesos.append(peso)
     
-    inMassa = IMC(peso, altura)  
     
 # Exibindo os dados armazenados
 logoSenai()
 print("\nDados dos usuários:")
 for i in range(len(nomes)):
+    inMassa = IMC(pesos[i], alturas[i])  
     print(f"Usuário {i+1}:")
     print("Nome:", nomes[i], sobrenomes[i])
     print("Idade:", idades[i])
@@ -67,4 +67,3 @@ for i in range(len(nomes)):
     print("Peso:", pesos[i], "quilogramas")
     print("IMC: ", round(inMassa, 2))
     print("Situação: ", situacao(inMassa))
-
