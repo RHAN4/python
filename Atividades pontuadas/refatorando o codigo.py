@@ -28,9 +28,10 @@ def resultado_imc(imc):
 
 # Classes:
 class Dados:
-    def __init__(self, nomes, sobrenomes, idades, alturas, pesos):
+    def __init__(self, nomes, sobrenomes, nomes_completos, idades, alturas, pesos):
         self.nomes = nomes
         self.sobrenomes = sobrenomes
+        self.nomes_completos = nomes_completos
         self.idades = idades
         self.alturas = alturas
         self.pesos = pesos
@@ -51,10 +52,9 @@ while True:
     idade = int(input("Digite a idade do usuário: "))
     altura = float(input("Digite a altura do usuário (em metros): "))
     peso = float(input("Digite o peso do usuário (em quilogramas): "))
+    nomes_completos = (nome + " " + sobrenome)
     
-    recolhidos.append(Dados(nome, sobrenome, idade, altura, peso))
-
-    #nomes_completos.append(nome + " " + sobrenome)
+    recolhidos.append(Dados(nome, sobrenome, nomes_completos, idade, altura, peso))
 
     imc = calcular_imc(peso, altura)
 
@@ -64,13 +64,13 @@ while True:
 logoSenai()
 print("\nDados dos usuários: \n")
 for i, coletados in enumerate(recolhidos):
-    print(f"Usuário {i+1}:")
-    #print("Nome:", nomes[i])
-    #print("Sobrenome:", sobrenomes[i])
-    print("Nome completo:", coletados.nomes, coletados.sobrenomes)
-    print("Idade:", coletados.idades)
-    print("Altura:", coletados.alturas, "metros")
-    print("Peso:", coletados.pesos, "quilogramas")
-    print("IMC:", round(imcs[i], 2))
-    print("Resultado:", resultados_imcs[i])
+    print(f"Usuário {i+1}: ")
+    print("Nome: ", coletados.nomes)
+    print("Sobrenome: ", coletados.sobrenomes)
+    print("Nome completo: ", coletados.nomes_completos)
+    print("Idade: ", coletados.idades)
+    print("Altura: ", coletados.alturas, "metros")
+    print("Peso: ", coletados.pesos, "quilogramas")
+    print("IMC: ", round(imcs[i], 2))
+    print("Resultado: ", resultados_imcs[i])
     print("\n")
